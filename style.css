@@ -70,3 +70,125 @@ body {
 .submit>button:hover {
     background-color: #e66e00;
 }
+
+
+ul.tasks {
+    list-style: none;
+    width: 100%;
+    padding: 8px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    max-height: 380px;
+}
+
+
+ul.tasks::-webkit-scrollbar {
+    width: 8px;
+}
+
+ul.tasks::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.12);
+    border-radius: 6px;
+}
+
+ul.tasks::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+ul.tasks li {
+    background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+    padding: 10px 12px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    word-break: break-word;
+    transition: transform .12s ease, box-shadow .12s ease;
+    cursor: default;
+    font-size: 15px;
+}
+
+ul.tasks li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1 1 auto;
+    cursor: pointer;
+}
+
+.task-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ff7700;
+    background: white;
+    flex: 0 0 auto;
+    display: inline-block;
+    margin: 0;
+}
+
+.task-checkbox:checked {
+    background: #ff7700;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.12);
+}
+
+.task-text {
+    flex: 1 1 auto;
+    display: inline-block;
+    line-height: 1.3;
+    white-space: normal;
+}
+
+
+.task-checkbox:checked+.task-text {
+    text-decoration: line-through;
+    color: #6b6b6b;
+    opacity: 0.8;
+}
+
+
+.delete {
+    border: none;
+    background: transparent;
+    color: #b00020;
+    font-size: 18px;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .12s ease, transform .08s ease;
+}
+
+.delete:hover {
+    background: rgba(176, 0, 32, 0.08);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 520px) {
+    .todo {
+        width: calc(100% - 48px);
+        padding: 20px;
+        height: auto;
+    }
+
+    ul.tasks {
+        max-height: 300px;
+    }
+}

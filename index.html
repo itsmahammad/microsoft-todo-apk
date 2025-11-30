@@ -14,9 +14,17 @@
             <h2>To-Do List <img src="./img/task.png" alt=""></h2>
         </label>
         <div class="submit"><input type="text" id="input" minlength="1" maxlength="28"
-                placeholder="add your tasks here"><button>Add</button>
+                placeholder="add your tasks here"><button onclick="addTask()">Add</button>
         </div>
-
+        <ul class="tasks">
+            <li>
+                <label class="task">
+                    <input type="checkbox" class="task-checkbox" />
+                    <span class="task-text">Example task (click text to mark completed)</span>
+                </label>
+                <button class="delete" aria-label="Delete task">×</button>
+            </li>
+        </ul>
 
 
 
