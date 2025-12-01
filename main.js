@@ -16,18 +16,26 @@ function addTask() {
     button.className = 'delete'
     button.textContent = 'x'
     span.textContent = taskValue
+    const edit = document.createElement('button')
+    edit.textContent = 'Edit'
+    edit.className = 'editButton'
+
 
     label.appendChild(input)
     label.appendChild(span)
     li.appendChild(label)
     li.appendChild(button)
-
+    li.appendChild(edit)
     if (taskValue != '' && taskValue.length >= 3 && taskValue != '   ') {
         ul.appendChild(li)
 
     }
     button.addEventListener("click", () => {
         li.remove()
+    })
+    edit.addEventListener('click', () => {
+        let newText = prompt('daxil et');
+        span.textContent = newText
     })
 }
 

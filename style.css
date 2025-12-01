@@ -181,6 +181,22 @@ ul.tasks li:hover {
     transform: translateY(-1px);
 }
 
+.editButton {
+    border: none;
+    background: transparent;
+    color: #007bff;
+    font-size: 18px;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .12s ease, transform .08s ease;
+}
+
 @media (max-width: 520px) {
     .todo {
         width: calc(100% - 48px);
